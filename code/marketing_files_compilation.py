@@ -161,8 +161,8 @@ if __name__ == '__main__':
 
     try:
         body = f.read()
-        print("Your key is: ", sys.argv[1])
-        transform_dataframes(name_list = dict_list[sys.argv[1]], breakdown = translate_break[sys.argv[1]])
+        print("Your key is: ", str(sys.argv[1]))
+        transform_dataframes(name_list = dict_list[str(sys.argv[1])], breakdown = translate_break[str(sys.argv[1])])
 
     except Exception as e:
         logging.error("Exception occurred", exc_info = True)
