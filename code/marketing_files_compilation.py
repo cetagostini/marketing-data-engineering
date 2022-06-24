@@ -12,7 +12,7 @@ import pandas as pd
 import sys
 
 import logging
-from importlib import reload
+from imp import reload
 import traceback
 
 import pyshorteners
