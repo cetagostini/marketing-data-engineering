@@ -12,7 +12,7 @@ import time
 from datetime import date, timedelta
 
 import logging
-from imp import reload
+from importlib import reload
 import traceback
 
 #local python files
