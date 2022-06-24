@@ -61,7 +61,7 @@ def transform_dataframes(name_list: list, breakdown: str):
     gc.collect()
     
     if (i>0) & ('events' in name_list[i]):
-        complete_dataframe = pd.merge(complete_dataframe, a, how = 'left', on = 'Ad group ID')
+        complete_dataframe = pd.merge(complete_dataframe, a, how = 'left', on = 'adset_id')
     else:
         complete_dataframe = pd.concat([complete_dataframe, a])
     
