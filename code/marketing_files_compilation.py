@@ -139,7 +139,8 @@ def transform_dataframes(name_list: list, breakdown: str):
   del complete_dataframe_with_shorts['ad_creative_image_url']
   del complete_dataframe_with_shorts['ad_creative_thumbnail_url']
   
-  complete_dataframe_with_shorts.to_csv(path + 'tranform_data_' + breakdown + bucketnamevalue + str(time_stamp) +'.csv', sep = ';', index_label = False,
+  final_dataframe = complete_dataframe_with_shorts[complete_dataframe_with_shorts.columns.drop(list(complete_dataframe_with_shorts.filter(regex='_y')))].copy()
+  final_dataframe.to_csv(path + 'tranform_data_' + breakdown + bucketnamevalue + str(time_stamp) +'.csv', sep = ';', index_label = False,
           storage_options={'key': '{}'.format(aws_id),
                            'secret': '{}'.format(aws_secret)})
   
