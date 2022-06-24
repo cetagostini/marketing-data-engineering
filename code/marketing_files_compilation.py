@@ -28,7 +28,7 @@ os.environ['AWS_SECRET'] = aws_secret
 #name_file = os.path.basename(__file__)
 
 patholens = '/home/ubuntu/marketing_etl/code/credentials/'
-file_json = patholens + 'credentials.json'
+file_json = patholens + 'credentials_rappi.json'
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = file_json
 project_id = 'rappi-dependencies-project'
