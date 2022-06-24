@@ -82,6 +82,7 @@ def transform_dataframes(name_list: list, breakdown: str):
   complete_dataframe.columns = complete_dataframe.columns.str.replace('í', 'i')
   complete_dataframe.columns = complete_dataframe.columns.str.replace('é', 'e')
   complete_dataframe.columns = complete_dataframe.columns.str.replace('ú', 'u')
+  complete_dataframe.columns = complete_dataframe.columns.str.replace('_x', '')
   
   complete_dataframe['upload_timestamp'] = stamptime
 
