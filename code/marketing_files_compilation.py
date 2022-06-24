@@ -27,7 +27,7 @@ os.environ['AWS_SECRET'] = aws_secret
 
 #name_file = os.path.basename(__file__)
 
-patholens = '/content/'
+patholens = '/home/ubuntu/marketing_etl/code/credentials/'
 file_json = patholens + 'credentials.json'
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = file_json
