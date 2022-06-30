@@ -31,7 +31,7 @@ patholens = '/content/'
 file_json = patholens + 'credentials.json'
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = file_json
-project_id = 'rappi-dependencies-project'
+project_id = 'google-id-project'
 
 credential = service_account.Credentials.from_service_account_file(file_json)
 
@@ -45,8 +45,8 @@ def transform_dataframes(name_list: list, breakdown: str):
 
   type_tiny = pyshorteners.Shortener()
   
-  path2 = 's3://rappi-bucket/googlesheet_raw_data/'
-  path = "s3://rappi-bucket/tranform_data/"
+  path2 = 's3://my-bucket/googlesheet_raw_data/'
+  path = "s3://my-bucket/tranform_data/"
   bucketnamevalue = '_at_'
   
   complete_dataframe = pd.DataFrame()
