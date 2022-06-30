@@ -28,7 +28,7 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = file_json
 os.environ['AWS_ID'] = aws_id
 os.environ['AWS_SECRET'] = aws_secret
 
-project_id = 'rappi-dependencies-project'
+project_id = 'google-cloud-project-id'
 
 credential = service_account.Credentials.from_service_account_file(file_json)
 
@@ -110,7 +110,7 @@ def extraction_data_saved(googlesheet_id: str, name_list: list):
     else:
         pass
 
-    temporal.to_csv('s3://rappi-bucket/googlesheet_raw_data/' + name_list[i+1]+ '_at_' + str(time_stamp) + '.csv', sep = ';', index_label = False,
+    temporal.to_csv('s3://my-bucket/googlesheet_raw_data/' + name_list[i+1]+ '_at_' + str(time_stamp) + '.csv', sep = ';', index_label = False,
                     storage_options={'key': '{}'.format(aws_id),
                                       'secret': '{}'.format(aws_secret)}
                     )
@@ -118,7 +118,7 @@ def extraction_data_saved(googlesheet_id: str, name_list: list):
 
 def compilation_data():
 
-    extraction_data_saved(googlesheet_id = 'rappi_reports_supermetrics_etl', name_list = googlesheets['google_sheet1'])
+    extraction_data_saved(googlesheet_id = 'googlesheet_reports_supermetrics_etl', name_list = googlesheets['google_sheet1'])
 
 if __name__ == '__main__':
 

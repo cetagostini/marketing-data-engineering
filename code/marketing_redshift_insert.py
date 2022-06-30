@@ -40,8 +40,8 @@ def data_to_redshift(breakdown: str, table_name: str, list_of_intenger: list, li
   today = date.today()
   time_stamp = today.strftime("%d-%m-%Y")
 
-  print('s3://rappi-bucket/' + path + 'tranform_data_' + breakdown + bucketnamevalue + str(time_stamp) + '.csv')
-  dataframe_table = pd.read_csv('s3://rappi-bucket/' + path + 'tranform_data_' + breakdown + bucketnamevalue + str(time_stamp) + '.csv',
+  print('s3://my-bucket/' + path + 'tranform_data_' + breakdown + bucketnamevalue + str(time_stamp) + '.csv')
+  dataframe_table = pd.read_csv('s3://my-bucket/' + path + 'tranform_data_' + breakdown + bucketnamevalue + str(time_stamp) + '.csv',
                                 sep = ';', dtype=dtypes, storage_options={'key': '{}'.format(aws_id),
                                       'secret': '{}'.format(aws_secret)})
 
