@@ -100,7 +100,7 @@ if __name__ == '__main__':
     
     reload(logging)
 
-    LOG_FILENAME = r'/home/ubuntu/marketing_etl/code/logs/' + name + str(sys.argv[0]) + '.log'
+    LOG_FILENAME = r'/home/ubuntu/marketing_etl/code/logs/' + name + str(sys.argv[1]) + '.log'
 
     logging.basicConfig(filename = LOG_FILENAME , level = logging.DEBUG)
 
@@ -109,11 +109,11 @@ if __name__ == '__main__':
     try:
         body = f.read()
 
-        data_to_redshift(breakdown = translate_break[sys.argv[0]], 
-                            table_name = stages_table[sys.argv[0]], 
-                            list_of_intenger = integer_dict[sys.argv[0]], 
-                            list_of_floats64 =float_dict[sys.argv[0]], 
-                            list_of_strings = string_dict[sys.argv[0]]
+        data_to_redshift(breakdown = translate_break[sys.argv[1]], 
+                            table_name = stages_table[sys.argv[1]], 
+                            list_of_intenger = integer_dict[sys.argv[1]], 
+                            list_of_floats64 =float_dict[sys.argv[1]], 
+                            list_of_strings = string_dict[sys.argv[1]]
                             )
 
     except Exception as e:

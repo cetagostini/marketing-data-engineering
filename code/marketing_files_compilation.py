@@ -162,7 +162,7 @@ if __name__ == '__main__':
     try:
         body = f.read()
 
-        transform_dataframes(name_list = dict_list[sys.argv[0]], breakdown = translate_break[sys.argv[0]])
+        transform_dataframes(name_list = dict_list[sys.argv[1]], breakdown = translate_break[sys.argv[1]])
 
     except Exception as e:
         logging.error("Exception occurred", exc_info = True)
